@@ -1,5 +1,4 @@
 import fs from 'node:fs';
-import path from 'node:path';
 import { DockerConfig } from './config';
 
 export function validateDockerConfig(config: DockerConfig): void {

@@ -1,4 +1,4 @@
-import { buildDockerFilters } from './filterBuilder';
+import { buildDockerFilters } from './filterbuilder';
 
 export const filterPresets = {
   runningContainers: buildDockerFilters({ status: 'running' }),
