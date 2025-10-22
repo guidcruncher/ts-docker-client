@@ -9,8 +9,9 @@ export interface DockerNetwork {
   Name: string;
   Driver: string;
   Scope: string;
+  Labels?: Record<string, string>;
 }
-
+ 
 export interface DockerSystemInfo {
   ID: string;
   Containers: number;
@@ -25,13 +26,15 @@ export interface DockerContainer {
   Image: string;
   State: string;
   Status: string;
+  Labels?: Record<string, string>;
 }
-
+  
 export interface DockerImage {
   Id: string;
   RepoTags: string[];
-  Size: number;
   Created: number;
+  Size: number;
+  Labels?: Record<string, string>;
 }
 
 export interface DockerExecConfig {
@@ -39,3 +42,11 @@ export interface DockerExecConfig {
   AttachStderr: boolean;
   Cmd: string[];
 }
+
+export type FilterInput =
+  | { label?: string | string[] }
+  | { status?: string | string[] }
+  | { name?: string | string[] }
+  | { driver?: string | string[] }
+  | { dangling?: boolean }
+  | { type?: string | string[] };

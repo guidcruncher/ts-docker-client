@@ -14,7 +14,7 @@ export function configFromEnv(): DockerConfig | null {
     host: url.hostname,
     port: url.port ? parseInt(url.port) : undefined,
     socketPath: url.pathname || undefined,
-    ssh: transport === 'ssh' ? url.host : undefined,
+    ssh: transport === 'ssh' ? (url.username==""?`${url.host}`:`${url.username}@${url.host}`)  : undefined,
   };
 
   if (process.env.DOCKER_TLS_VERIFY === '1') {

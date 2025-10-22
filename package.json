@@ -6,13 +6,15 @@
   "types": "dist/index.d.ts",
   "scripts": {
     "build": "tsc",
-    "test": "vitest"
+    "test": "vitest",
+    "test:watch": "vitest --watch"
   },
   "dependencies": {
     "axios": "^1.6.0"
   },
   "devDependencies": {
-    "typescript": "^5.2.0",
+    "@types/node": "^24.9.1",
+    "typescript": "^5.9.3",
     "vitest": "^3.2.4"
   }
 }
